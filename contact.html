@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Bhagyashri Pisal - CV - AI & Data Science Student">
-  <title>Home - Bhagyashri Pisal CV</title>
+  <meta name="description" content="Contact - Bhagyashri Pisal">
+  <title>Contact - Bhagyashri Pisal CV</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
@@ -13,7 +13,7 @@
 </head>
 <body>
 
-<!-- HEADER (full width, top of page) -->
+<!-- HEADER -->
 <header>
   <button id="menu-toggle" class="menu-toggle" aria-label="Toggle Navigation"><i class="fa-solid fa-bars"></i></button>
   <img src="profile.jpeg" alt="Bhagyashri Pisal" class="header-profile">
@@ -26,17 +26,18 @@
         <a href="https://www.linkedin.com/in/bhagyashri-pisal-40398232a" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
       </div>
     </div>
-    <p>AI & Data Science Student</p>
+    <p>AI &amp; Data Science Student</p>
+
   </div>
   <img src="csmss.png" alt="CSMSS College Logo" class="header-logo">
 </header>
 
-<!-- SIDEBAR -->
+<!-- SIDEBAR + MAIN wrapped in page-body -->
 <div class="page-body">
   <div class="sidebar-overlay"></div>
 <div class="sidebar">
   <h2>My CV</h2>
-  <a href="index.html" class="active"><i class="fa-solid fa-house" style="width:20px; text-align:center; margin-right:8px;"></i> Home</a>
+  <a href="index.html"><i class="fa-solid fa-house" style="width:20px; text-align:center; margin-right:8px;"></i> Home</a>
   <a href="personal.html"><i class="fa-solid fa-user" style="width:20px; text-align:center; margin-right:8px;"></i> Personal Info</a>
   <a href="education.html"><i class="fa-solid fa-graduation-cap" style="width:20px; text-align:center; margin-right:8px;"></i> Education</a>
   <a href="skills.html"><i class="fa-solid fa-code" style="width:20px; text-align:center; margin-right:8px;"></i> Skills</a>
@@ -44,7 +45,7 @@
   <a href="certificates.html"><i class="fa-solid fa-certificate" style="width:20px; text-align:center; margin-right:8px;"></i> Certificates</a>
   <a href="achievements.html"><i class="fa-solid fa-trophy" style="width:20px; text-align:center; margin-right:8px;"></i> Achievements</a>
   <a href="hobbies.html"><i class="fa-solid fa-heart" style="width:20px; text-align:center; margin-right:8px;"></i> Hobbies</a>
-  <a href="contact.html"><i class="fa-solid fa-envelope" style="width:20px; text-align:center; margin-right:8px;"></i> Contact</a>
+  <a href="contact.html" class="active"><i class="fa-solid fa-envelope" style="width:20px; text-align:center; margin-right:8px;"></i> Contact</a>
 
   <div style="padding: 24px;">
     <a href="#" class="sidebar-download-btn"><i class="fa-solid fa-download" style="margin-right:8px;"></i> Download PDF</a>
@@ -53,23 +54,66 @@
 
 <!-- MAIN CONTENT -->
 <div class="main">
-
   <div class="content">
-    <h2>Welcome</h2>
-    <p>This is my personal CV website where you can explore my skills, projects, and achievements.</p>
+    <h2>Direct Contact Information</h2>
 
-    <h2>Career Objective</h2>
-    <p>
-      To become a skilled Full Stack Developer and build innovative AI-based applications 
-      while contributing to the growth of the technology industry.
+    <p><b>Email:</b> <a href="mailto:shripisal68@gmail.com">shripisal68@gmail.com</a></p>
+    <p><b>Phone:</b> <a href="tel:+919322266452">9322266452</a></p>
+
+    <h2>Connect on Social Media</h2>
+
+    <p><b>GitHub:</b>
+      <a href="https://github.com/bhagyashri07907" target="_blank">
+        github.com/bhagyashri07907 →
+      </a>
     </p>
 
-    <h2>Quick Links</h2>
-    <ul>
-      <li><a href="https://bhagyashri07907.github.io/portfolio-website/" target="_blank">View My Portfolio →</a></li>
-      <li><a href="https://github.com/bhagyashri07907" target="_blank">GitHub Profile →</a></li>
-      <li><a href="https://www.linkedin.com/in/bhagyashri-pisal-40398232a" target="_blank">LinkedIn Profile →</a></li>
-    </ul>
+    <p><b>LinkedIn:</b>
+      <a href="https://www.linkedin.com/in/bhagyashri-pisal-40398232a" target="_blank">
+        linkedin.com/in/bhagyashri-pisal →
+      </a>
+    </p>
+
+    <h2>Online Portfolio</h2>
+
+    <p><b>Portfolio Website:</b>
+      <a href="https://bhagyashri07907.github.io/portfolio-website/" target="_blank">
+        View My Portfolio →
+      </a>
+    </p>
+
+    <h2>Message</h2>
+    <p>
+      Feel free to reach out directly using the form below. I typically respond within 24-48 hours. Let's discuss new projects, learning opportunities, and career prospects in AI and web development!
+    </p>
+
+    <form action="https://formspree.io/f/YOUR_FORMSPREE_CODE" method="POST" class="contact-form">
+      <div class="form-group">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required placeholder="Enter your full name">
+      </div>
+      <div class="form-group">
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="email" required placeholder="name@example.com">
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required placeholder="Write your message here..."></textarea>
+      </div>
+      <button type="submit" class="submit-btn"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
+    </form>
+
+    <h2>Response Time</h2>
+    <p>
+      I typically respond to emails within 24-48 hours. For urgent matters, you can also reach out via phone 
+      or connect with me on LinkedIn for faster communication.
+    </p>
+
+    <h2>Looking Forward</h2>
+    <p>
+      Whether you're interested in collaboration, have an exciting opportunity, or just want to chat about 
+      technology, I'd love to hear from you! Let's connect and create something amazing together.
+    </p>
   </div>
 
   <footer>
