@@ -629,7 +629,49 @@ footer a:hover {
   gap: 24px;
 }
 
-/* RESPONSIVE DESIGN */
+/* Profile image on personal page */
+.profile {
+  display: block;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--primary-color);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin: 0 auto 24px auto;
+}
+
+/* Table wrapper for horizontal scroll on mobile */
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* ---- Tablet / small laptop (≤ 900px) ---- */
+@media (max-width: 900px) {
+  header {
+    padding: 20px 24px;
+    gap: 16px;
+  }
+
+  header h1 {
+    font-size: 1.9em;
+  }
+
+  .content {
+    margin: 16px;
+    padding: 24px;
+  }
+
+  .project-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+}
+
+/* ---- Mobile (≤ 768px) ---- */
 @media (max-width: 768px) {
   body {
     flex-direction: column;
@@ -639,10 +681,16 @@ footer a:hover {
     flex-direction: column;
   }
 
+  /* Show hamburger button */
   .menu-toggle {
     display: block;
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
   }
 
+  /* Off-canvas sidebar */
   .sidebar {
     position: fixed;
     top: 0;
@@ -658,7 +706,7 @@ footer a:hover {
     left: 0;
   }
 
-  /* Dim overlay for mobile */
+  /* Dim overlay */
   .sidebar-overlay {
     display: none;
     position: fixed;
@@ -674,52 +722,137 @@ footer a:hover {
     display: block;
   }
 
-  .main, .container {
-    width: 100%;
-  }
-
-  .container {
-    margin: 16px;
-    padding: 24px;
-    box-sizing: border-box;
-  }
-
+  /* Header stacking */
   header {
     flex-direction: column;
     text-align: center;
-    padding: 24px;
-    gap: 16px;
+    padding: 20px 16px;
+    gap: 12px;
+    position: relative;
+  }
+
+  .header-profile {
+    width: 64px;
+    height: 64px;
+  }
+
+  .header-logo {
+    width: 60px;
+    height: 60px;
   }
 
   .header-text {
     align-items: center;
   }
 
+  /* Break the name-row into a column so name + socials stack */
+  .name-row {
+    flex-direction: column !important;
+    gap: 8px !important;
+    align-items: center !important;
+  }
+
   header h1 {
-    font-size: 2em;
+    font-size: 1.6em;
+    text-align: center;
   }
 
   header p {
-    font-size: 1em;
+    font-size: 0.95em;
   }
 
-  .content {
-    margin: 16px;
-    padding: 24px;
+  /* Stack social icons + theme toggle */
+  .header-socials {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px !important;
   }
 
-  footer {
+  .theme-toggle {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  .header-socials a {
+    font-size: 1.3em;
+  }
+
+  /* Main content */
+  .main, .container {
     width: 100%;
   }
 
+  .container {
+    margin: 12px;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .content {
+    margin: 12px;
+    padding: 20px;
+  }
+
+  .content h2 {
+    font-size: 1.5em;
+    margin-top: 24px;
+    margin-bottom: 16px;
+  }
+
+  .content h3 {
+    font-size: 1.15em;
+  }
+
+  /* Tables — horizontal scroll */
   table {
-    font-size: 0.9em;
+    font-size: 0.85em;
+    min-width: 500px;
   }
 
   table th, table td {
-    padding: 12px;
+    padding: 10px 12px;
+    white-space: nowrap;
   }
 
+  /* Wrap table in scrollable container (CSS-only fallback) */
+  .content > table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Project cards — single column */
+  .project-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .project-card {
+    padding: 20px;
+  }
+
+  /* Contact form */
+  .contact-form {
+    padding: 20px;
+  }
+
+  /* Footer */
+  footer {
+    width: 100%;
+    padding: 20px 16px;
+  }
+
+  footer p {
+    font-size: 0.85em;
+    word-break: break-word;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  /* Profile section */
   .profile-section {
     flex-direction: column;
     text-align: center;
@@ -728,21 +861,159 @@ footer a:hover {
   .intro h2 {
     text-align: center;
   }
+
+  /* Profile pic on personal page */
+  .profile {
+    width: 110px;
+    height: 110px;
+  }
+
+  /* Back to top — move for thumb reach */
+  .back-to-top {
+    bottom: 20px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+  }
+
+  /* Skill bars */
+  .skill-header {
+    font-size: 0.9em;
+  }
 }
 
+/* ---- Small mobile (≤ 480px) ---- */
 @media (max-width: 480px) {
+  header {
+    padding: 16px 12px;
+    gap: 10px;
+  }
+
+  header h1 {
+    font-size: 1.35em;
+  }
+
+  header p {
+    font-size: 0.85em;
+  }
+
+  .header-profile {
+    width: 54px;
+    height: 54px;
+  }
+
+  .header-logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .theme-toggle {
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+
   .sidebar a {
     padding: 12px 16px;
     font-size: 0.95em;
   }
 
-  header h1 {
-    font-size: 1.6em;
+  .content {
+    margin: 8px;
+    padding: 16px;
   }
 
   .content h2 {
-    font-size: 1.5em;
+    font-size: 1.3em;
+    margin-top: 20px;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
   }
 
-/* Cursor media query removed */
+  .content h3 {
+    font-size: 1.05em;
+  }
+
+  .content p, .content li {
+    font-size: 0.92em;
+  }
+
+  .contact-form {
+    padding: 16px;
+    gap: 14px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .submit-btn {
+    padding: 12px;
+    font-size: 0.95rem;
+  }
+
+  /* Footer stacking for very small screens */
+  .footer-links {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  footer p {
+    font-size: 0.8em;
+  }
+
+  /* Profile pic on personal page */
+  .profile {
+    width: 90px;
+    height: 90px;
+  }
+
+  .project-card {
+    padding: 16px;
+  }
+
+  .project-tech span {
+    font-size: 0.75rem;
+    padding: 3px 8px;
+  }
+
+  table {
+    font-size: 0.8em;
+  }
+
+  .back-to-top {
+    bottom: 16px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+}
+
+/* ---- Very small devices (≤ 360px) ---- */
+@media (max-width: 360px) {
+  header h1 {
+    font-size: 1.15em;
+  }
+
+  .content {
+    margin: 6px;
+    padding: 12px;
+  }
+
+  .content h2 {
+    font-size: 1.15em;
+  }
+
+  .header-socials a {
+    font-size: 1.1em;
+  }
+
+  .theme-toggle {
+    font-size: 10px;
+    padding: 4px 8px;
+  }
 }

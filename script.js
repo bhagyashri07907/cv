@@ -105,4 +105,22 @@ document.addEventListener('DOMContentLoaded', () => {
     skillProgressBars.forEach(bar => skillObserver.observe(bar));
 
     // Removed typing effect per user request
+
+    // --- Wrap standalone tables for horizontal scroll on mobile ---
+    document.querySelectorAll('.content > table').forEach(table => {
+        if (!table.parentElement.classList.contains('table-wrap')) {
+            const wrapper = document.createElement('div');
+            wrapper.classList.add('table-wrap');
+            table.parentNode.insertBefore(wrapper, table);
+            wrapper.appendChild(table);
+        }
+    });
+
+    // --- Close sidebar on resize above mobile breakpoint ---
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768 && sidebar) {
+            sidebar.classList.remove('open');
+            if (sidebarOverlay) sidebarOverlay.classList.remove('open');
+        }
+    });
 });
